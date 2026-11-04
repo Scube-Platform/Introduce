@@ -82,6 +82,8 @@ app/
 
 서버 런타임이 없는 정적 사이트다. `pnpm build` 결과(`.output/public`)를 nginx 같은 정적 서버에 그대로 올린다.
 
+- **GitHub Pages** — <https://scube-platform.github.io/Introduce/>. main 에 들어오면 `.github/workflows/pages.yml` 이
+  타입 검사 → `NUXT_APP_BASE_URL=/Introduce/` 정적 생성 → 배포까지 한다. 손으로 다시 올릴 때는 Actions 의 Pages 를 직접 실행한다.
 - **서브경로에 올릴 때**는 `NUXT_APP_BASE_URL=/경로/ pnpm build` (끝의 `/` 가 없으면 `/_nuxt/...` 가 전부 404 난다).
 - **관제 화면 링크**는 기본으로 그리지 않는다. 사내 주소를 소스에 박아 두지 않으려고, 빌드할 때
   `NUXT_PUBLIC_CONSOLE_URL=<관제 화면 주소>` 로 넣으면 헤더 · 닫는 말에 링크가 생긴다.

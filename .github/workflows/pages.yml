@@ -1,0 +1,48 @@
+# 소개 사이트를 GitHub Pages 에 올린다 — main 에 들어올 때마다 정적 생성해서 그대로 배포한다.
+# 주소가 /Introduce/ 아래라 NUXT_APP_BASE_URL 로 알려 준다(끝의 / 포함). 관제 화면 주소(NUXT_PUBLIC_CONSOLE_URL)는
+# 공개 사이트라 넣지 않는다 — 링크가 그려지지 않는다.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포가 겹치면 앞의 것을 끝까지 올린 뒤 다음 것을 올린다
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+        env:
+          NUXT_APP_BASE_URL: /Introduce/
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
