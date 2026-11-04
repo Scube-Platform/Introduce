@@ -1,0 +1,6 @@
+# 네이티브 바이너리 빌드 허용 목록 (pnpm 12는 명시 승인 필요)
+#   esbuild         — vite 번들러
+#   @parcel/watcher — nuxt dev 파일 감시
+allowBuilds:
+  esbuild: true
+  "@parcel/watcher": true

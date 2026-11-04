@@ -1,0 +1,26 @@
+{
+  "name": "@aegis/introduce",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Aegis 소개 사이트 — AI 센서융합 작업안전 시스템",
+  "scripts": {
+    "dev": "nuxt dev --port 3140 --host 127.0.0.1",
+    "build": "nuxt generate",
+    "preview": "npx --yes serve .output/public -l 3140",
+    "typecheck": "nuxt typecheck",
+    "postinstall": "nuxt prepare"
+  },
+  "packageManager": "pnpm@12.4.2",
+  "dependencies": {
+    "nuxt": "^4.5.2",
+    "three": "^0.187.0",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.11"
+  }
+}

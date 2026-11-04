@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 0 116 116">
+<style>.s{fill:#142846}.d{fill:#FFCF4B}@media (prefers-color-scheme:dark){.s{fill:#FFCF4B}.d{fill:none}}</style>
+<path class="s" fill-rule="evenodd" d="M50 3.5C51.2 3.5 52.3 3.7 53.4 4.1L89 15.6Q92 16.6 92 19.8V54C92 81 74 101 51.6 111.4Q50 112.2 48.4 111.4C26 101 8 81 8 54V19.8Q8 16.6 11 15.6L46.6 4.1C47.7 3.7 48.8 3.5 50 3.5ZM45.9 27L54.1 27L78.55 85L64.45 85L50 50.73L35.55 85L21.45 85ZM43.75 72.5a6.25 6.25 0 1 0 12.5 0a6.25 6.25 0 1 0 -12.5 0Z"/>
+<circle class="d" cx="50" cy="72.5" r="6.25"/>
+</svg>
