@@ -13,6 +13,7 @@ permissions:
   pages: write
   id-token: write
 
+
 # 배포가 겹치면 앞의 것을 끝까지 올린 뒤 다음 것을 올린다
 concurrency:
   group: pages
